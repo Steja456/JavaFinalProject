@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Trending Movies</title></head>
+<body>
+<h1>Trending Movies</h1>
+<div th:each="movie : ${movies}">
+  <h3 th:text="${movie.title}"></h3>
+  <img th:src="'https://image.tmdb.org/t/p/w200' + ${movie.poster_path}" />
+  <a th:href="@{/movie/{id}(id=${movie.id})}">View Details</a>
+</div>
+</body>
+</html>
